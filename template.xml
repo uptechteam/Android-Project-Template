@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="1"
+    name="UPTech starter project Activity"
+    description="Creates a new activity, add common used libraries and generte boilerplate code for them"
+    requireAppTheme="true"
+    minApi="16"
+    minBuildApi="16">
+
+    <dependency name="android-support-v4" revision="8" />
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="activityClass"
+        name="Activity Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MainActivity"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityClass)}"
+        default="activity_login"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="activityTitle"
+        name="Title"
+        type="string"
+        constraints="nonempty"
+        default="Sign in"
+        help="The name of the activity." />
+
+    <parameter
+        id="application_class"
+        name="Class extends Application"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MyApplication"
+        help="The name of the application class" />
+
+    <parameter
+        id="includeDagger"
+        name="Include Dagger2 into the project"
+        type="boolean"
+        default="true"
+        help="If true, include dagger and add basic configuretions" />
+
+    <parameter
+        id="app_module"
+        name="Module Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="AppModule"
+        visibility="includeDagger"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="app_component"
+        name="Component Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="AppComponent"
+        visibility="includeDagger"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="app_preferences"
+        name="Preferences class Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="AppPreferences"
+        visibility="includeDagger"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <thumbs>
+        <thumb>template_uptech_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
