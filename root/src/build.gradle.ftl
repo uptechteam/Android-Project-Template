@@ -17,21 +17,18 @@ def getVersionCodeFromGit = { ->
 }
 android {
 buildTypes {
-${releseBuildType} {
+${releseBuildType}{
 minifyEnabled false
-proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-}
-${debugBuildType} {
+proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'}
+${debugBuildType}{
 applicationIdSuffix ".dev"
-minifyEnabled false
-}
-}
+minifyEnabled false}}
 apply plugin:'me.tatarka.retrolambda'
 apply plugin:'realm-android'
 apply plugin:'com.neenbedankt.android-apt'
-dependencies {
+//this dependencies can be moved to its usual place
+dependencies{
 provided 'org.glassfish:javax.annotation:10.0-b28'
 apt 'com.google.dagger:dagger-compiler:2.0.1'
 compile 'com.google.dagger:dagger:2.0.1'
-}
-}
+}}
