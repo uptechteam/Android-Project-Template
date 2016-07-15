@@ -1,5 +1,17 @@
 <?xml version="1.0"?>
 <recipe>
+    
+    <dependency mavenUrl="com.jakewharton:butterknife:7.0.1"/>
+    <dependency mavenUrl="com.google.code.gson:gson:2.6.1"/>
+    <dependency mavenUrl="com.squareup.retrofit2:retrofit:2.0.0"/>
+    <dependency mavenUrl="com.squareup.retrofit2:converter-gson:2.0.0"/>
+    <dependency mavenUrl="com.facebook.stetho:stetho:1.3.1"/>
+    <dependency mavenUrl="com.facebook.stetho:stetho-okhttp3:1.3.1"/>
+    <dependency mavenUrl="com.github.bumptech.glide:glide:3.7.0"/>
+    <dependency mavenUrl="io.reactivex:rxandroid:1.1.0"/>
+    <dependency mavenUrl="io.reactivex:rxjava:1.1.0"/>
+    <dependency mavenUrl="com.squareup.retrofit2:adapter-rxjava:2.0.0"/>
+
 
     <merge from="root/AndroidManifest.xml.ftl"
              to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />

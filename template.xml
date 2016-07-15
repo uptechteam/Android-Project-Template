@@ -81,6 +81,31 @@
         help="The name of the activity class to create" />
 
     <parameter
+        id="addBuildTypes"
+        name="Create different build types for app"
+        type="boolean"
+        default="true"
+        help="If true, creates two build types for app" />
+
+    <parameter
+        id="releseBuildType"
+        name="build type name"
+        type="string"
+        constraints="unique|nonempty"
+        default="release"
+        visibility="addBuildTypes"
+        help="The name of the build type" />
+
+    <parameter
+        id="debugBuildType"
+        name="build type name"
+        type="string"
+        constraints="unique|nonempty"
+        default="debug"
+        visibility="addBuildTypes"
+        help="The name of the build type" />
+
+    <parameter
         id="packageName"
         name="Package name"
         type="string"
