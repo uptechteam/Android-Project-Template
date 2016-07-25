@@ -3,7 +3,7 @@ package ${packageName}.config;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import ${packageName}.${activityClass};
+import ${packageName}.ui.${activityClass};
 
 @Singleton
 @Component(modules = {

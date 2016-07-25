@@ -1,0 +1,21 @@
+package ${packageName}.api;
+
+import android.util.Log;
+
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+public class ${apiService} {
+
+    public static final String TAG = ${apiService}.class.getSimpleName();
+
+    <#if includeRx>
+	    private <T> Observable<T> wrapSchedulers(Observable<T> observable) {
+	        return observable
+	                .subscribeOn(Schedulers.io())
+	                .observeOn(AndroidSchedulers.mainThread())
+	                .doOnError(error -> Log.e(TAG, "wrapSchedulers: ", error));
+	    }
+    </#if>
+}

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 <#if genereteBaseActivity>
-import ${packageName}.ui.${baseActivityName};
+import ${packageName}.ui.${baseActivityName}
 
 public class ${activityClass} extends ${baseActivityName} {
 <#else>

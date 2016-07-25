@@ -13,6 +13,7 @@
     <category value="Activity" />
     <formfactor value="Mobile" />
 
+    <!-- General fields -->
     <parameter
         id="activityClass"
         name="Activity Name"
@@ -46,40 +47,40 @@
         default="MyApplication"
         help="The name of the application class" />
 
+    <!-- Base Activity and Fragment -->
     <parameter
-        id="includeDagger"
-        name="Include Dagger2 into the project"
+        id="genereteBaseActivity"
+        name="Create BaseActivity class"
         type="boolean"
         default="true"
-        help="If true, include dagger and add basic configuretions" />
+        help="If true, creates base Activity class" />
 
     <parameter
-        id="app_module"
-        name="Module Name"
+        id="baseActivityName"
+        name="Base Activity Name"
         type="string"
         constraints="class|unique|nonempty"
-        default="AppModule"
-        visibility="includeDagger"
-        help="The name of the activity class to create" />
+        visibility="genereteBaseActivity"
+        default="BaseActivity"
+        help="The name of the base activity class" />
 
     <parameter
-        id="app_component"
-        name="Component Name"
-        type="string"
-        constraints="class|unique|nonempty"
-        default="AppComponent"
-        visibility="includeDagger"
-        help="The name of the activity class to create" />
+        id="genereteBaseFragment"
+        name="Create Base Fragment class"
+        type="boolean"
+        default="true"
+        help="If true, creates base Fragment class" />
 
     <parameter
-        id="app_preferences"
-        name="Preferences class Name"
+        id="BaseFragmentName"
+        name="Base Fragment Name"
         type="string"
         constraints="class|unique|nonempty"
-        default="AppPreferences"
-        visibility="includeDagger"
-        help="The name of the activity class to create" />
+        visibility="genereteBaseFragment"
+        default="BaseFragment"
+        help="The name of the base fragment class" />
 
+    <!-- Build types fields -->
     <parameter
         id="addBuildTypes"
         name="Create different build types for app"
@@ -104,6 +105,117 @@
         default="debug"
         visibility="addBuildTypes"
         help="The name of the build type" />
+
+    <!-- Libraties paraneters -->
+    <parameter
+        id="includeDagger"
+        name="Include Dagger2 into the project"
+        type="boolean"
+        default="true"
+        help="If true, include dagger and add basic configuretions" />
+
+    <parameter
+        id="generateClassesWithDefaultNames"
+        name="Ganarete configuration classes with default names"
+        type="boolean"
+        default="true"
+        visibility="includeDagger"
+        help="Default names for configuration classes: AppModule, AppComponent, AppPreferences" />
+
+    <parameter
+        id="app_module"
+        name="Module Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="AppModule"
+        visibility="!generateClassesWithDefaultNames"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="app_component"
+        name="Component Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="AppComponent"
+        visibility="!generateClassesWithDefaultNames"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="app_preferences"
+        name="Preferences class Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="AppPreferences"
+        visibility="!generateClassesWithDefaultNames"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="includeRetrofit"
+        name="Include Retrofit into the project"
+        type="boolean"
+        default="true"
+        help="If true, include retrofit" />
+
+    <parameter
+        id="generateApiClassesWithDefaultNames"
+        name="Generate Api classes with default names"
+        type="boolean"
+        default="true"
+        visibility="includeRetrofit"
+        help="If true, genatates Api and ApiService classes" />
+
+    <parameter
+        id="apiClass"
+        name="Api class name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Api"
+        visibility="!generateApiClassesWithDefaultNames"
+        help="The name of the Api interface" />
+
+    <parameter
+        id="apiService"
+        name="ApiService class name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="ApiService"
+        visibility="!generateApiClassesWithDefaultNames"
+        help="The name of the ApiService class" />
+
+    <parameter
+        id="includeButterknife"
+        name="Include Butterknife into the project"
+        type="boolean"
+        default="true"
+        help="If true, include dagger and add basic configuretions" />
+
+    <parameter
+        id="includeRx"
+        name="Include Rx into the project"
+        type="boolean"
+        default="true"
+        help="If true, include Rx" />
+
+    <parameter
+        id="includeStetho"
+        name="Include Stetho into the project"
+        type="boolean"
+        default="true"
+        help="If true, include Stetho" />
+
+    <parameter
+        id="includeGlide"
+        name="Include Glide into the project"
+        type="boolean"
+        default="true"
+        help="If true, include Glide" />
+
+    <parameter
+        id="addStaticChecks"
+        name="Include Static Checks"
+        type="boolean"
+        default="true"
+        help="If true, includes Static code checks : Checkstyle, PMD, Lint, Findbugs" />
 
     <parameter
         id="packageName"

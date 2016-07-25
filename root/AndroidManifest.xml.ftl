@@ -8,7 +8,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".${activityClass}"
+        <activity android:name=".ui.${activityClass}"
             android:label="@string/app_name"
             <#if hasNoActionBar>
             android:theme="@style/${themeNameNoActionBar}"</#if>>

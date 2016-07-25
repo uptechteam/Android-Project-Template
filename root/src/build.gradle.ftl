@@ -23,9 +23,15 @@ proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pr
 ${debugBuildType}{
 applicationIdSuffix ".dev"
 minifyEnabled false}}
+compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 apply plugin:'me.tatarka.retrolambda'
 apply plugin:'realm-android'
 apply plugin:'com.neenbedankt.android-apt'
+apply from: '../config/quality.gradle'
+
 //this dependencies can be moved to its usual place
 dependencies{
 provided 'org.glassfish:javax.annotation:10.0-b28'
